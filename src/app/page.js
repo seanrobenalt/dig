@@ -30,8 +30,15 @@ export default function Home() {
               >
                 dig
               </span>
-              NFT will be an NFT on the Degen or Ham chain (haven&apos;t decided
-              yet).
+              NFT will be an NFT on the{" "}
+              <a
+                href="https://ham.fun/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ham chain
+              </a>
+              .
             </h2>
             <h2 style={{ margin: "10px" }}>
               Seize it by clicking the frame on any Farcaster client (coming
