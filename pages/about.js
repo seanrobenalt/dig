@@ -52,8 +52,8 @@ export default function About() {
                 >
                   dig
                 </span>
-                NFT will be an NFT on the Degen or Ham chain (haven't decided
-                yet).
+                NFT will be an NFT on the Degen or Ham chain (haven&apos;t
+                decided yet).
               </h2>
               <h2 style={{ margin: "10px" }}>
                 Seize it by clicking the frame on any Farcaster client (coming

@@ -30,7 +30,7 @@ export default function Home() {
               >
                 dig
               </span>
-              NFT will be an NFT on the Degen or Ham chain (haven't decided
+              NFT will be an NFT on the Degen or Ham chain (haven&apos;t decided
               yet).
             </h2>
             <h2 style={{ margin: "10px" }}>
