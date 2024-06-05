@@ -28,7 +28,11 @@ export default function About() {
           <h1 style={{ color: "#C9362B", fontFamily: "SF Fedora" }}>Dig</h1>
         </div>
 
-        <h3 style={{ fontFamily: "LaBeouf" }}>Coming Soon</h3>
+        <div style={{ fontFamily: "LaBeouf" }}>
+          <div style={{ margin: "10px" }}>
+            <h2>coming soon.</h2>
+          </div>
+        </div>
       </main>
     </>
   );
