@@ -21,8 +21,9 @@ export default function About() {
       <main
         style={{
           alignItems: "center",
-          padding: "6rem",
+          padding: "3rem",
           minHeight: "100vh",
+          width: "100%",
         }}
       >
         <div>
