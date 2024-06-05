@@ -30,11 +30,33 @@ export default function Home() {
               >
                 dig
               </span>
-              NFT is an NFT on the Degen chain.
+              NFT will be an NFT on the Degen or Ham chain (haven't decided
+              yet).
             </h2>
             <h2 style={{ margin: "10px" }}>
               Seize it by clicking the frame on any Farcaster client (coming
-              soon).
+              soon). There is only one{" "}
+              <span
+                style={{
+                  color: "#C9362B",
+                  fontFamily: "SF Fedora",
+                  margin: "0px 10px",
+                }}
+              >
+                dig
+              </span>{" "}
+              NFT. Transfers are disabled except by the contract, so the only
+              way to get it is to{" "}
+              <span
+                style={{
+                  color: "#C9362B",
+                  fontFamily: "SF Fedora",
+                  margin: "0px 10px",
+                }}
+              >
+                dig
+              </span>{" "}
+              it.
             </h2>
             <h2 style={{ margin: "10px" }}>
               There will also be a contract deployed to Base, that stores
