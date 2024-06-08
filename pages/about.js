@@ -16,7 +16,7 @@ export default function About() {
           property="fc:frame:post_url"
           content="https://www.dig.bingo/api/hiw/read"
         />
-        <meta property="fc:frame:image:aspect_ratio" content=" 1.91:1" />
+        <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
       </Head>
       <main
         style={{
