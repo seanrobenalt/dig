@@ -729,7 +729,7 @@ export default async function handler(req, res) {
         <html>
           <head>
             <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="https://www.dig.bingo/error.png" />
+            <meta property="fc:frame:image" content="https://dig-axx77enke-seanweb3s-projects.vercel.app/error.png" />
             <meta property="og:image" content="https://www.dig.bingo/error.png" />
             <meta property="fc:frame:image:aspect_ratio" content="1:1" />
           </head>
@@ -755,7 +755,7 @@ export default async function handler(req, res) {
             <html>
               <head>
                 <meta property="fc:frame" content="vNext" />
-                <meta property="fc:frame:image" content="https://www.dig.bingo/youOwnIt.png" />
+                <meta property="fc:frame:image" content="https://dig-axx77enke-seanweb3s-projects.vercel.app/youOwnIt.png" />
                 <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
                 <meta property="fc:frame:button:1" content="View on Ham Explorer" />
                 <meta property="fc:frame:button:1:action" content="link" />
@@ -775,7 +775,7 @@ export default async function handler(req, res) {
           <html>
             <head>
               <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://www.dig.bingo/youOwnIt.png" />
+              <meta property="fc:frame:image" content="https://dig-axx77enke-seanweb3s-projects.vercel.app/youOwnIt.png" />
               <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
               <meta property="fc:frame:button:1" content="View on Ham Explorer" />
               <meta property="fc:frame:button:1:action" content="link" />
@@ -790,7 +790,7 @@ export default async function handler(req, res) {
           <html>
             <head>
               <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://www.dig.bingo/cannotDig.png" />
+              <meta property="fc:frame:image" content="https://dig-axx77enke-seanweb3s-projects.vercel.app/cannotDig.png" />
               <meta property="og:image" content="https://www.dig.bingo/cannotDig.png" />
               <meta property="fc:frame:button:1" content="View on Ham Explorer" />
               <meta property="fc:frame:button:1:action" content="link" />
