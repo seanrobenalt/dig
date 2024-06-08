@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import { createDigPayout } from "../../utils/digPayout";
 
 const abi = [
   {
@@ -932,6 +933,7 @@ const PAY_CONTRACT_ADDRESS = "0x62c8ef179dF6167a7899994F477B79D85D5Eb428";
 const tokens = {
   degen: "0x49Fe10E7F4478f937e54b4237aba6513a1396CbE",
   mfer: "0xA10d28A3599EA74D1760e1b423553F2B19DF86Dd",
+  tn100x: "0x926957Bf2361b1Ce9DB63496daA818D0cE18d13c",
 };
 
 export default async function handler(req, res) {
@@ -948,35 +950,27 @@ export default async function handler(req, res) {
       wallet
     );
 
-    const randomToken = Math.floor(Math.random() * 2);
-    const tokenName = randomToken === 0 ? "degen" : "mfer";
-    const token = tokens[tokenName];
-
     const amountToSend = 1000000000000000000000n;
 
-    const balance = BigInt(await payContract.getERC20Balance(token));
+    for (const tokenName in tokens) {
+      const tokenAddress = tokens[tokenName];
+      const balance = BigInt(await payContract.getERC20Balance(tokenAddress));
 
-    if (balance >= amountToSend) {
-      await payContract.transferTokens(token, currentHolder, amountToSend);
-
-      res.status(200).json({ message: "Sent tokens" });
-    } else {
-      const otherToken = tokenName === "degen" ? "mfer" : "degen";
-      const otherTokenAddress = tokens[otherToken];
-      const otherBalance = BigInt(
-        await payContract.getERC20Balance(otherTokenAddress)
-      );
-
-      if (otherBalance >= amountToSend) {
-        await payContract.transferTokens(
-          otherTokenAddress,
+      if (balance >= amountToSend) {
+        const tx = await payContract.transferTokens(
+          tokenAddress,
           currentHolder,
           amountToSend
         );
 
+        createDigPayout(currentHolder, tokenAddress, tx.hash);
+
         res.status(200).json({ message: "Sent tokens" });
+        return;
       }
     }
+
+    res.status(400).json({ message: "Insufficient token balances" });
   } else {
     res.setHeader("Allow", ["POST"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
