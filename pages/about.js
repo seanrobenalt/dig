@@ -54,6 +54,7 @@ export default function About() {
                 </span>
                 NFT is on the Ham blockchain. Contract:{" "}
                 <a
+                  style={{ color: "#C9362B" }}
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://explorer.ham.fun/address/0x142407b2D618f7DA94bE2194f426B532f3405949"
@@ -104,6 +105,7 @@ export default function About() {
                 </span>
                 NFT holder. Contract for the ERC20s:{" "}
                 <a
+                  style={{ color: "#C9362B" }}
                   href="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
                   target="_blank"
                   rel="noopener noreferrer"
