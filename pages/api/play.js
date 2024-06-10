@@ -877,8 +877,8 @@ export default async function handler(req, res) {
         <html>
           <head>
             <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="https://www.dig.bingo/error.png" />
-            <meta property="og:image" content="https://www.dig.bingo/error.png" />
+            <meta property="fc:frame:image" content="https://www.dig.bingo/unsuccess.png" />
+            <meta property="og:image" content="https://www.dig.bingo/unsuccess.png" />
             <meta property="fc:frame:button:1" content="Dig" />
             <meta property="fc:frame:button:1:action" content="post" />
             <meta
