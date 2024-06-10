@@ -51,8 +51,28 @@ export default function About() {
               </span>
               NFT holder.
             </h2>
-            <h2>The NFT contract is on Ham at [paste address].</h2>
-            <h2>The ERC20 contract is on Base at [paste address].</h2>
+            <h2>
+              The NFT contract is on Ham at{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://explorer.ham.fun/address/0x142407b2D618f7DA94bE2194f426B532f3405949"
+              >
+                0x142407b2D618f7DA94bE2194f426B532f3405949
+              </a>
+              .
+            </h2>
+            <h2>
+              The ERC20 contract is on Base at{" "}
+              <a
+                href="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                0x156c132C93ce88bbaB04313ef456F093d6957409
+              </a>
+              .
+            </h2>
           </div>
         </div>
       </div>

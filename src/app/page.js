@@ -30,13 +30,13 @@ export default function Home() {
               >
                 dig
               </span>
-              NFT will be an NFT on the{" "}
+              NFT is on the Ham blockchain. Contract:{" "}
               <a
-                href="https://ham.fun/"
                 target="_blank"
                 rel="noopener noreferrer"
+                href="https://explorer.ham.fun/address/0x142407b2D618f7DA94bE2194f426B532f3405949"
               >
-                Ham chain
+                0x142407b2D618f7DA94bE2194f426B532f3405949
               </a>
               .
             </h2>
@@ -66,8 +66,7 @@ export default function Home() {
               it.
             </h2>
             <h2 style={{ margin: "10px" }}>
-              There will also be a contract deployed to Base, that stores
-              ERC20s.
+              There is also a contract deployed to Base, that stores ERC20s.
             </h2>
             <h2 style={{ margin: "10px" }}>
               At a random time each week, this contract will transfer 1k of a
@@ -81,8 +80,15 @@ export default function Home() {
               >
                 dig
               </span>
-              NFT holder. Check back to this page once the game is live to see
-              the current balance of ERC20s in the contract.
+              NFT holder. Contract for the ERC20s:{" "}
+              <a
+                href="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                0x156c132C93ce88bbaB04313ef456F093d6957409
+              </a>
+              .
             </h2>
           </div>
         </div>
