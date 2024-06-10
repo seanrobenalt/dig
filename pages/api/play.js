@@ -772,7 +772,7 @@ export default async function handler(req, res) {
                   <meta property="fc:frame:button:1:action" content="link" />
                   <meta
                     property="fc:frame:button:1:target"
-                    content="https://warpcast.com/~/compose?text=I%27ve+got+the+Dig&embeds[]=https%3A%2F%2Fwww.dig.bingo%2Fplay
+                    content="https://warpcast.com/~/compose?text=I%27ve+got+the+Dig&embeds[]=https%3A%2F%2Fwww.dig.bingo%2Fplay"
                   />
                   <meta property="fc:frame:button:2" content="NFT" />
                   <meta property="fc:frame:button:2:action" content="link" />
@@ -813,7 +813,7 @@ export default async function handler(req, res) {
                 <meta property="fc:frame:button:1:action" content="link" />
                 <meta
                   property="fc:frame:button:1:target"
-                  content="https://warpcast.com/~/compose?text=I%27ve+got+the+Dig&embeds[]=https%3A%2F%2Fwww.dig.bingo%2Fplay
+                  content="https://warpcast.com/~/compose?text=I%27ve+got+the+Dig&embeds[]=https%3A%2F%2Fwww.dig.bingo%2Fplay"
                 />
                 <meta property="fc:frame:button:2" content="NFT" />
                 <meta property="fc:frame:button:2:action" content="link" />
