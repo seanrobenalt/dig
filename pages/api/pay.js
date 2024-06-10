@@ -6,35 +6,6 @@ const abi = [
     inputs: [
       {
         internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    name: "approve",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "initialOwner",
-        type: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
         name: "sender",
         type: "address",
       },
@@ -239,24 +210,6 @@ const abi = [
     type: "event",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "recipient",
-        type: "address",
-      },
-      {
-        internalType: "string",
-        name: "tokenURI",
-        type: "string",
-      },
-    ],
-    name: "mintNFT",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     anonymous: false,
     inputs: [
       {
@@ -274,6 +227,67 @@ const abi = [
     ],
     name: "OwnershipTransferred",
     type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "from",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "Transfer",
+    type: "event",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "approve",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "recipient",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "tokenURI",
+        type: "string",
+      },
+    ],
+    name: "mintNFT",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [],
@@ -365,31 +379,6 @@ const abi = [
     type: "function",
   },
   {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "from",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "Transfer",
-    type: "event",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -451,6 +440,17 @@ const abi = [
   {
     inputs: [
       {
+        internalType: "address",
+        name: "initialOwner",
+        type: "address",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [
+      {
         internalType: "uint256",
         name: "",
         type: "uint256",
@@ -508,25 +508,6 @@ const abi = [
       },
     ],
     name: "getApproved",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "getCurrentHolder",
     outputs: [
       {
         internalType: "address",
@@ -710,18 +691,8 @@ const abi = [
     type: "function",
   },
 ];
+
 const payAbi = [
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "initialOwner",
-        type: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
   {
     inputs: [
       {
@@ -802,6 +773,57 @@ const payAbi = [
     type: "event",
   },
   {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "tokenAddress",
+        type: "address",
+      },
+    ],
+    name: "TokenRemovedFromWhitelist",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "tokenAddress",
+        type: "address",
+      },
+    ],
+    name: "TokenWhitelisted",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "tokenAddress",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+    ],
+    name: "TokensTransferred",
+    type: "event",
+  },
+  {
     inputs: [
       {
         internalType: "address",
@@ -812,38 +834,6 @@ const payAbi = [
     name: "addTokenToWhitelist",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "tokenAddress",
-        type: "address",
-      },
-    ],
-    name: "getERC20Balance",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "owner",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
     type: "function",
   },
   {
@@ -903,6 +893,53 @@ const payAbi = [
     type: "function",
   },
   {
+    stateMutability: "payable",
+    type: "receive",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "initialOwner",
+        type: "address",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "tokenAddress",
+        type: "address",
+      },
+    ],
+    name: "getERC20Balance",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "address",
@@ -921,26 +958,24 @@ const payAbi = [
     stateMutability: "view",
     type: "function",
   },
-  {
-    stateMutability: "payable",
-    type: "receive",
-  },
 ];
 
-const CONTRACT_ADDRESS = "0x4A4ea08E3F69760CA406274a484a2DCbA2BE7684";
-const PAY_CONTRACT_ADDRESS = "0x62c8ef179dF6167a7899994F477B79D85D5Eb428";
+const CONTRACT_ADDRESS = "0x30fdC4F7A4ec582a8399f3fA81fCe1CfB0E445E7";
+const PAY_CONTRACT_ADDRESS = "0x156c132C93ce88bbaB04313ef456F093d6957409";
 
 const tokens = {
-  degen: "0x49Fe10E7F4478f937e54b4237aba6513a1396CbE",
-  mfer: "0xA10d28A3599EA74D1760e1b423553F2B19DF86Dd",
-  tn100x: "0x926957Bf2361b1Ce9DB63496daA818D0cE18d13c",
+  mfer: "0xE3086852A4B125803C815a158249ae468A3254Ca",
+  degen: "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed",
+  ham: "0x5B5dee44552546ECEA05EDeA01DCD7Be7aa6144A",
 };
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
     const wallet = new ethers.Wallet(process.env.PK, provider);
-    const nftContract = new ethers.Contract(CONTRACT_ADDRESS, abi, wallet);
+    const hamProvider = new ethers.JsonRpcProvider("https://rpc.ham.fun/");
+    const hamWallet = new ethers.Wallet(process.env.PK, hamProvider);
+    const nftContract = new ethers.Contract(CONTRACT_ADDRESS, abi, hamWallet);
 
     const currentHolder = await nftContract.ownerOf(1);
 

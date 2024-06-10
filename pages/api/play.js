@@ -7,35 +7,6 @@ const abi = [
     inputs: [
       {
         internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    name: "approve",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "initialOwner",
-        type: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
         name: "sender",
         type: "address",
       },
@@ -240,24 +211,6 @@ const abi = [
     type: "event",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "recipient",
-        type: "address",
-      },
-      {
-        internalType: "string",
-        name: "tokenURI",
-        type: "string",
-      },
-    ],
-    name: "mintNFT",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     anonymous: false,
     inputs: [
       {
@@ -275,6 +228,67 @@ const abi = [
     ],
     name: "OwnershipTransferred",
     type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "from",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "Transfer",
+    type: "event",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "approve",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "recipient",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "tokenURI",
+        type: "string",
+      },
+    ],
+    name: "mintNFT",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [],
@@ -366,31 +380,6 @@ const abi = [
     type: "function",
   },
   {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "from",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "Transfer",
-    type: "event",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -452,6 +441,17 @@ const abi = [
   {
     inputs: [
       {
+        internalType: "address",
+        name: "initialOwner",
+        type: "address",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [
+      {
         internalType: "uint256",
         name: "",
         type: "uint256",
@@ -509,25 +509,6 @@ const abi = [
       },
     ],
     name: "getApproved",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "getCurrentHolder",
     outputs: [
       {
         internalType: "address",
@@ -717,14 +698,100 @@ const fdk = new PinataFDK({
   pinata_gateway: process.env.PINATA_GATEWAY,
 });
 
-const CONTRACT_ADDRESS = "0x4A4ea08E3F69760CA406274a484a2DCbA2BE7684";
+const CONTRACT_ADDRESS = "0x142407b2D618f7DA94bE2194f426B532f3405949";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { isValid, message } = await fdk.validateFrameMessage(req.body);
+    try {
+      const { isValid, message } = await fdk.validateFrameMessage(req.body);
 
-    if (!isValid) {
-      return res.status(200).send(`
+      if (!isValid) {
+        return res.status(200).send(`
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta property="fc:frame" content="vNext" />
+              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/error.png" />
+              <meta property="og:image" content="https://www.dig.bingo/error.png" />
+              <meta property="fc:frame:image:aspect_ratio" content="1:1" />
+            </head>
+          </html>
+        `);
+      } else {
+        const { fid } = message.data;
+
+        const canDig = await canFidDig(fid);
+
+        if (canDig.can_dig) {
+          const ethAddress = await fdk.getEthAddressForFid(fid);
+
+          const provider = new ethers.JsonRpcProvider("https://rpc.ham.fun");
+          const wallet = new ethers.Wallet(process.env.PK, provider);
+          const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, wallet);
+
+          const currentHolder = await contract.ownerOf(1);
+
+          if (currentHolder === ethAddress) {
+            return res.status(200).send(`
+            <!DOCTYPE html>
+            <html>
+              <head>
+                <meta property="fc:frame" content="vNext" />
+                <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/youOwnIt.png" />
+                <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
+                <meta property="fc:frame:button:1" content="View on Ham Explorer" />
+                <meta property="fc:frame:button:1:action" content="link" />
+                <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/" />
+                <meta property="fc:frame:image:aspect_ratio" content="1:1" />
+              </head>
+            </html>
+          `);
+          }
+
+          const tx = await contract.transferGrail(currentHolder, ethAddress, 1);
+
+          createDig(fid, ethAddress, tx.hash);
+
+          return res.status(200).send(`
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta property="fc:frame" content="vNext" />
+              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/youOwnIt.png" />
+              <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
+              <meta property="fc:frame:button:1" content="View on Ham Explorer" />
+              <meta property="fc:frame:button:1:action" content="link" />
+              <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/tx/${tx.hash}" />
+              <meta property="fc:frame:button:2" content="View Tokens" />
+              <meta property="fc:frame:button:2:action" content="link" />
+              <meta property="fc:frame:button:2:target" content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409" />
+              <meta property="fc:frame:image:aspect_ratio" content="1:1" />
+            </head>
+          </html>
+        `);
+        } else {
+          return res.status(200).send(`
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta property="fc:frame" content="vNext" />
+              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/cannotDig.png" />
+              <meta property="og:image" content="https://www.dig.bingo/cannotDig.png" />
+              <meta property="fc:frame:button:1" content="View on Ham Explorer" />
+              <meta property="fc:frame:button:1:action" content="link" />
+              <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/" />
+              <meta property="fc:frame:button:2" content="View Rules" />
+              <meta property="fc:frame:button:2:action" content="link" />
+              <meta property="fc:frame:button:2:target" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/rules" />
+              <meta property="fc:frame:image:aspect_ratio" content="1:1" />
+            </head>
+          </html>
+        `);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+      return res.status(500).send(`
         <!DOCTYPE html>
         <html>
           <head>
@@ -735,71 +802,6 @@ export default async function handler(req, res) {
           </head>
         </html>
       `);
-    } else {
-      const { fid } = message.data;
-
-      const canDig = await canFidDig(fid);
-
-      if (canDig.can_dig) {
-        const ethAddress = await fdk.getEthAddressForFid(fid);
-
-        const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
-        const wallet = new ethers.Wallet(process.env.PK, provider);
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, wallet);
-
-        const currentHolder = await contract.ownerOf(1);
-
-        if (currentHolder === ethAddress) {
-          return res.status(200).send(`
-            <!DOCTYPE html>
-            <html>
-              <head>
-                <meta property="fc:frame" content="vNext" />
-                <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/youOwnIt.png" />
-                <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
-                <meta property="fc:frame:button:1" content="View on Ham Explorer" />
-                <meta property="fc:frame:button:1:action" content="link" />
-                <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun" />
-                <meta property="fc:frame:image:aspect_ratio" content="1:1" />
-              </head>
-            </html>
-          `);
-        }
-
-        const tx = await contract.transferGrail(currentHolder, ethAddress, 1);
-
-        createDig(fid, ethAddress, tx.hash);
-
-        return res.status(200).send(`
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/youOwnIt.png" />
-              <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
-              <meta property="fc:frame:button:1" content="View on Ham Explorer" />
-              <meta property="fc:frame:button:1:action" content="link" />
-              <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/tx/${tx.hash}" />
-              <meta property="fc:frame:image:aspect_ratio" content="1:1" />
-            </head>
-          </html>
-        `);
-      } else {
-        return res.status(200).send(`
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/cannotDig.png" />
-              <meta property="og:image" content="https://www.dig.bingo/cannotDig.png" />
-              <meta property="fc:frame:button:1" content="View on Ham Explorer" />
-              <meta property="fc:frame:button:1:action" content="link" />
-              <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun" />
-              <meta property="fc:frame:image:aspect_ratio" content="1:1" />
-            </head>
-          </html>
-        `);
-      }
     }
   } else {
     res.setHeader("Allow", ["POST"]);

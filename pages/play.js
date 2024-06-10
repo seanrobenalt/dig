@@ -19,17 +19,17 @@ export default function About() {
           property="fc:frame:button:1:post_url"
           content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/api/play"
         />
-        <meta property="fc:frame:button:2" content="View on Ham" />
+        <meta property="fc:frame:button:2" content="NFT" />
         <meta property="fc:frame:button:2:action" content="link" />
         <meta
           property="fc:frame:button:2:target"
-          content="https://explorer.ham.fun"
+          content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/"
         />
-        <meta property="fc:frame:button:3" content="Token Balances" />
+        <meta property="fc:frame:button:3" content="Tokens" />
         <meta property="fc:frame:button:3:action" content="link" />
         <meta
           property="fc:frame:button:3:target"
-          content="https://basescan.org"
+          content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
         />
         <meta property="fc:frame:button:4" content="Rules" />
         <meta property="fc:frame:button:4:action" content="link" />
