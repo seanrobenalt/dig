@@ -20,7 +20,7 @@ export default function About() {
         <meta property="fc:frame:button:2:action" content="link" />
         <meta
           property="fc:frame:button:2:target"
-          content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/"
+          content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
         />
         <meta property="fc:frame:button:3" content="Tokens" />
         <meta property="fc:frame:button:3:action" content="link" />

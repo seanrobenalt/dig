@@ -714,6 +714,30 @@ export default async function handler(req, res) {
               <meta property="fc:frame:image" content="https://www.dig.bingo/error.png" />
               <meta property="og:image" content="https://www.dig.bingo/error.png" />
               <meta property="fc:frame:image:aspect_ratio" content="1:1" />
+              <meta property="fc:frame:button:1" content="Dig" />
+              <meta property="fc:frame:button:1:action" content="post" />
+              <meta
+                property="fc:frame:button:1:post_url"
+                content="https://www.dig.bingo/api/play"
+              />
+              <meta property="fc:frame:button:2" content="NFT" />
+              <meta property="fc:frame:button:2:action" content="link" />
+              <meta
+                property="fc:frame:button:2:target"
+                content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
+              />
+              <meta property="fc:frame:button:3" content="Tokens" />
+              <meta property="fc:frame:button:3:action" content="link" />
+              <meta
+                property="fc:frame:button:3:target"
+                content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+              />
+              <meta property="fc:frame:button:4" content="Rules" />
+              <meta property="fc:frame:button:4:action" content="link" />
+              <meta
+                property="fc:frame:button:4:target"
+                content="https://www.dig.bingo/rules"
+              />
             </head>
           </html>
         `);
@@ -739,9 +763,30 @@ export default async function handler(req, res) {
                 <meta property="fc:frame" content="vNext" />
                 <meta property="fc:frame:image" content="https://www.dig.bingo/youOwnIt.png" />
                 <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
-                <meta property="fc:frame:button:1" content="View on Ham Explorer" />
-                <meta property="fc:frame:button:1:action" content="link" />
-                <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/" />
+                <meta property="fc:frame:button:1" content="Dig" />
+                <meta property="fc:frame:button:1:action" content="post" />
+                <meta
+                  property="fc:frame:button:1:post_url"
+                  content="https://www.dig.bingo/api/play"
+                />
+                <meta property="fc:frame:button:2" content="NFT" />
+                <meta property="fc:frame:button:2:action" content="link" />
+                <meta
+                  property="fc:frame:button:2:target"
+                  content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
+                />
+                <meta property="fc:frame:button:3" content="Tokens" />
+                <meta property="fc:frame:button:3:action" content="link" />
+                <meta
+                  property="fc:frame:button:3:target"
+                  content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+                />
+                <meta property="fc:frame:button:4" content="Rules" />
+                <meta property="fc:frame:button:4:action" content="link" />
+                <meta
+                  property="fc:frame:button:4:target"
+                  content="https://www.dig.bingo/rules"
+                />
                 <meta property="fc:frame:image:aspect_ratio" content="1:1" />
               </head>
             </html>
@@ -759,12 +804,30 @@ export default async function handler(req, res) {
               <meta property="fc:frame" content="vNext" />
               <meta property="fc:frame:image" content="https://www.dig.bingo/youOwnIt.png" />
               <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
-              <meta property="fc:frame:button:1" content="View on Ham Explorer" />
-              <meta property="fc:frame:button:1:action" content="link" />
-              <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/tx/${tx.hash}" />
-              <meta property="fc:frame:button:2" content="View Tokens" />
+              <meta property="fc:frame:button:1" content="Dig" />
+              <meta property="fc:frame:button:1:action" content="post" />
+              <meta
+                property="fc:frame:button:1:post_url"
+                content="https://www.dig.bingo/api/play"
+              />
+              <meta property="fc:frame:button:2" content="NFT" />
               <meta property="fc:frame:button:2:action" content="link" />
-              <meta property="fc:frame:button:2:target" content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409" />
+              <meta
+                property="fc:frame:button:2:target"
+                content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
+              />
+              <meta property="fc:frame:button:3" content="Tokens" />
+              <meta property="fc:frame:button:3:action" content="link" />
+              <meta
+                property="fc:frame:button:3:target"
+                content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+              />
+              <meta property="fc:frame:button:4" content="Rules" />
+              <meta property="fc:frame:button:4:action" content="link" />
+              <meta
+                property="fc:frame:button:4:target"
+                content="https://www.dig.bingo/rules"
+              />
               <meta property="fc:frame:image:aspect_ratio" content="1:1" />
             </head>
           </html>
@@ -777,12 +840,30 @@ export default async function handler(req, res) {
               <meta property="fc:frame" content="vNext" />
               <meta property="fc:frame:image" content="https://www.dig.bingo/cannotDig.png" />
               <meta property="og:image" content="https://www.dig.bingo/cannotDig.png" />
-              <meta property="fc:frame:button:1" content="View on Ham Explorer" />
-              <meta property="fc:frame:button:1:action" content="link" />
-              <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/" />
-              <meta property="fc:frame:button:2" content="View Rules" />
+              <meta property="fc:frame:button:1" content="Dig" />
+              <meta property="fc:frame:button:1:action" content="post" />
+              <meta
+                property="fc:frame:button:1:post_url"
+                content="https://www.dig.bingo/api/play"
+              />
+              <meta property="fc:frame:button:2" content="NFT" />
               <meta property="fc:frame:button:2:action" content="link" />
-              <meta property="fc:frame:button:2:target" content="https://www.dig.bingo/rules" />
+              <meta
+                property="fc:frame:button:2:target"
+                content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
+              />
+              <meta property="fc:frame:button:3" content="Tokens" />
+              <meta property="fc:frame:button:3:action" content="link" />
+              <meta
+                property="fc:frame:button:3:target"
+                content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+              />
+              <meta property="fc:frame:button:4" content="Rules" />
+              <meta property="fc:frame:button:4:action" content="link" />
+              <meta
+                property="fc:frame:button:4:target"
+                content="https://www.dig.bingo/rules"
+              />
               <meta property="fc:frame:image:aspect_ratio" content="1:1" />
             </head>
           </html>
@@ -798,6 +879,30 @@ export default async function handler(req, res) {
             <meta property="fc:frame" content="vNext" />
             <meta property="fc:frame:image" content="https://www.dig.bingo/error.png" />
             <meta property="og:image" content="https://www.dig.bingo/error.png" />
+            <meta property="fc:frame:button:1" content="Dig" />
+            <meta property="fc:frame:button:1:action" content="post" />
+            <meta
+              property="fc:frame:button:1:post_url"
+              content="https://www.dig.bingo/api/play"
+            />
+            <meta property="fc:frame:button:2" content="NFT" />
+            <meta property="fc:frame:button:2:action" content="link" />
+            <meta
+              property="fc:frame:button:2:target"
+              content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
+            />
+            <meta property="fc:frame:button:3" content="Tokens" />
+            <meta property="fc:frame:button:3:action" content="link" />
+            <meta
+              property="fc:frame:button:3:target"
+              content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+            />
+            <meta property="fc:frame:button:4" content="Rules" />
+            <meta property="fc:frame:button:4:action" content="link" />
+            <meta
+              property="fc:frame:button:4:target"
+              content="https://www.dig.bingo/rules"
+            />
             <meta property="fc:frame:image:aspect_ratio" content="1:1" />
           </head>
         </html>
