@@ -82,7 +82,20 @@ export default function About() {
                 >
                   0x156c132C93ce88bbaB04313ef456F093d6957409
                 </a>
-                .
+                . The tokens for the weekly{" "}
+                <span
+                  style={{
+                    color: "#C9362B",
+                    fontFamily: "SF Fedora",
+                    margin: "0px 10px",
+                  }}
+                >
+                  dig
+                </span>{" "}
+                payouts must be whitelisted in the contract to avoid diggers
+                getting spammy tokens as their rewards. Current tokens available
+                for payouts are degen, mfercoin and tn100x. More tokens can be
+                whitelisted.
               </li>
             </ul>
           </div>
