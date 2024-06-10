@@ -8,7 +8,7 @@ export default async function handler(req, res) {
             <meta property="fc:frame:image" content="https://www.dig.bingo/hiw3.png" />
             <meta property="fc:frame:button:1" content="Next" />
             <meta property="fc:frame:post_url" content="https://www.dig.bingo/api/hiw/read3" />
-            <meta property="fc:frame:image:aspect_ratio" content=" 1.91:1" />
+            <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
           </head>
         </html>
       `);
