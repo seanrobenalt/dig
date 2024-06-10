@@ -711,7 +711,7 @@ export default async function handler(req, res) {
           <html>
             <head>
               <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/error.png" />
+              <meta property="fc:frame:image" content="https://www.dig.bingo/error.png" />
               <meta property="og:image" content="https://www.dig.bingo/error.png" />
               <meta property="fc:frame:image:aspect_ratio" content="1:1" />
             </head>
@@ -737,7 +737,7 @@ export default async function handler(req, res) {
             <html>
               <head>
                 <meta property="fc:frame" content="vNext" />
-                <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/youOwnIt.png" />
+                <meta property="fc:frame:image" content="https://www.dig.bingo/youOwnIt.png" />
                 <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
                 <meta property="fc:frame:button:1" content="View on Ham Explorer" />
                 <meta property="fc:frame:button:1:action" content="link" />
@@ -757,7 +757,7 @@ export default async function handler(req, res) {
           <html>
             <head>
               <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/youOwnIt.png" />
+              <meta property="fc:frame:image" content="https://www.dig.bingo/youOwnIt.png" />
               <meta property="og:image" content="https://www.dig.bingo/youOwnIt.png" />
               <meta property="fc:frame:button:1" content="View on Ham Explorer" />
               <meta property="fc:frame:button:1:action" content="link" />
@@ -775,14 +775,14 @@ export default async function handler(req, res) {
           <html>
             <head>
               <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/cannotDig.png" />
+              <meta property="fc:frame:image" content="https://www.dig.bingo/cannotDig.png" />
               <meta property="og:image" content="https://www.dig.bingo/cannotDig.png" />
               <meta property="fc:frame:button:1" content="View on Ham Explorer" />
               <meta property="fc:frame:button:1:action" content="link" />
               <meta property="fc:frame:button:1:target" content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/" />
               <meta property="fc:frame:button:2" content="View Rules" />
               <meta property="fc:frame:button:2:action" content="link" />
-              <meta property="fc:frame:button:2:target" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/rules" />
+              <meta property="fc:frame:button:2:target" content="https://www.dig.bingo/rules" />
               <meta property="fc:frame:image:aspect_ratio" content="1:1" />
             </head>
           </html>
@@ -796,7 +796,7 @@ export default async function handler(req, res) {
         <html>
           <head>
             <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/error.png" />
+            <meta property="fc:frame:image" content="https://www.dig.bingo/error.png" />
             <meta property="og:image" content="https://www.dig.bingo/error.png" />
             <meta property="fc:frame:image:aspect_ratio" content="1:1" />
           </head>

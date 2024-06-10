@@ -7,17 +7,14 @@ export default function About() {
         <meta property="fc:frame" content="vNext" />
         <meta
           property="fc:frame:image"
-          content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/digNFT.png"
+          content="https://www.dig.bingo/digNFT.png"
         />
-        <meta
-          property="og:image"
-          content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/digNFT.png"
-        />
+        <meta property="og:image" content="https://www.dig.bingo/digNFT.png" />
         <meta property="fc:frame:button:1" content="Dig" />
         <meta property="fc:frame:button:1:action" content="post" />
         <meta
           property="fc:frame:button:1:post_url"
-          content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/api/play"
+          content="https://www.dig.bingo/api/play"
         />
         <meta property="fc:frame:button:2" content="NFT" />
         <meta property="fc:frame:button:2:action" content="link" />
@@ -35,7 +32,7 @@ export default function About() {
         <meta property="fc:frame:button:4:action" content="link" />
         <meta
           property="fc:frame:button:4:target"
-          content="https://dig-git-sean-featuregame-seanweb3s-projects.vercel.app/rules"
+          content="https://www.dig.bingo/rules"
         />
         <meta property="fc:frame:image:aspect_ratio" content="1:1" />
       </Head>
