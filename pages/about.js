@@ -64,8 +64,17 @@ export default function About() {
                 .
               </h2>
               <h2 style={{ margin: "10px" }}>
-                Seize it by clicking the frame on any Farcaster client (coming
-                soon). There is only one{" "}
+                Seize it by clicking the frame on any Farcaster client, here's a
+                link to the original{" "}
+                <a
+                  style={{ color: "#C9362B" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://warpcast.com/sean07.eth/0x6dd8a5a4"
+                >
+                  Warpcast
+                </a>{" "}
+                post. There is only one{" "}
                 <span
                   style={{
                     color: "#C9362B",
