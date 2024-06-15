@@ -499,6 +499,7 @@ const CONTRACT_ADDRESS = "0xCca2e3e860079998622868843c9A00dEbb591D30";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const address = req.body.address;
+    console.log("address", address);
 
     const provider = new ethers.JsonRpcProvider("https://rpc.ham.fun");
     const wallet = new ethers.Wallet(process.env.PK, provider);
@@ -506,9 +507,13 @@ export default async function handler(req, res) {
 
     const fid = await contract.ownerFid(address);
 
-    console.log("fid", fid, fid[0]);
+    console.log("fid", fid.toString());
 
-    updateDig(req.body.id, fid[0]);
+    console.log("id", req.body.id);
+
+    const res = await updateDig(req.body.id, fid.toString());
+
+    console.log("res", res);
 
     res.status(200).send({ success: true });
   } else {
