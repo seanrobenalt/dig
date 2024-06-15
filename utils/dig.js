@@ -25,3 +25,20 @@ export const createDig = async (fid, address, tx) => {
       throw err;
     });
 };
+
+export const updateDig = async (id, fid) => {
+  return fetch(`${process.env.API_HOST}/api/v1/digs/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      fid,
+    }),
+  })
+    .then((response) => response.json())
+    .catch((err) => {
+      console.error(err);
+      throw err;
+    });
+};
