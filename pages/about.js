@@ -64,8 +64,8 @@ export default function About() {
                 .
               </h2>
               <h2 style={{ margin: "10px" }}>
-                Seize it by clicking the frame on any Farcaster client, here's a
-                link to the original{" "}
+                Seize it by clicking the frame on any Farcaster client,
+                here&apos;s a link to the original{" "}
                 <a
                   style={{ color: "#C9362B" }}
                   target="_blank"
