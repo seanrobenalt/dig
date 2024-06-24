@@ -967,6 +967,7 @@ const tokens = {
   mfer: "0xE3086852A4B125803C815a158249ae468A3254Ca",
   degen: "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed",
   ham: "0x5B5dee44552546ECEA05EDeA01DCD7Be7aa6144A",
+  higher: "0x0578d8A44db98B23BF096A382e016e29a5Ce0ffe",
 };
 
 export default async function handler(req, res) {
