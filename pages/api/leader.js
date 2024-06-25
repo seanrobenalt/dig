@@ -19,13 +19,10 @@ export default async (req, res) => {
 
       const leaders = await getLeaders();
 
-      console.log("leaders", leaders);
-
       const headerHeight = 230;
       const startY = headerHeight + 50;
 
       leaders.forEach((leader, index) => {
-        console.log("leader", leader[0], leader[1]);
         const textX = 110;
         const y = startY + index * (fontSize + 10);
 
@@ -40,7 +37,11 @@ export default async (req, res) => {
 
       const base64Image = buffer.toString("base64");
 
+      console.log("uploading base64 image to imgur", base64Image);
+
       const imgurResponse = await uploadImageToImgur(base64Image);
+
+      console.log("imgurResponse", imgurResponse);
 
       return res.status(200).send(`
         <!DOCTYPE html>
