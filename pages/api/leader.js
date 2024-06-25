@@ -35,13 +35,7 @@ export default async (req, res) => {
 
       const buffer = canvas.toBuffer("image/png");
 
-      const base64Image = buffer.toString("base64");
-
-      console.log("uploading base64 image to imgur", base64Image);
-
-      const imgurResponse = await uploadImageToImgur(base64Image);
-
-      console.log("imgurResponse", imgurResponse);
+      const imgurResponse = await uploadImageToImgur(buffer);
 
       return res.status(200).send(`
         <!DOCTYPE html>
