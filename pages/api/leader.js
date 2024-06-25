@@ -19,6 +19,8 @@ export default async (req, res) => {
 
       const leaders = await getLeaders();
 
+      console.log("leaders", leaders);
+
       const headerHeight = 230;
       const startY = headerHeight + 50;
 
