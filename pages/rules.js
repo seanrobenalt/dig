@@ -94,8 +94,8 @@ export default function About() {
                 </span>{" "}
                 payouts must be whitelisted in the contract to avoid diggers
                 getting spammy tokens as their rewards. Current tokens available
-                for payouts are degen, mfercoin and tn100x. More tokens can be
-                whitelisted.
+                for payouts are degen, mfercoin, higher and tn100x. More tokens
+                can be whitelisted.
               </li>
             </ul>
           </div>
