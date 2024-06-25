@@ -18,6 +18,8 @@ export default async (req, res) => {
 
       const leaders = await getLeaders();
 
+      console.log("leaders", leaders);
+
       const headerHeight = 230;
       const startY = headerHeight + 50;
 
@@ -26,15 +28,23 @@ export default async (req, res) => {
         const y = startY + index * (32 + 10);
 
         ctx.fillStyle = "#000000";
-        ctx.fillText(`${index + 1}. ${leader[0]}`, textX, y);
+        const text = `${index + 1}. ${leader[0]}`;
+        console.log("text", text);
+        ctx.fillText(text, textX, y);
 
         ctx.fillStyle = "#C9362B";
-        ctx.fillText(`${leader[1]}`, 380, y);
+        const cnt = `${leader[1]}`;
+        console.log("cnt", cnt);
+        ctx.fillText(cnt, 380, y);
       });
+
+      console.log("canvas", canvas);
 
       const buffer = canvas.toBuffer("image/png");
 
       const imgurResponse = await uploadImageToImgur(buffer);
+
+      console.log("imgurResponse", imgurResponse);
 
       return res.status(200).send(`
         <!DOCTYPE html>
