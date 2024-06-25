@@ -1,7 +1,7 @@
 import { createCanvas, loadImage } from "@napi-rs/canvas";
 import path from "path";
 import { uploadImageToImgur } from "../../utils/uploadImage";
-import { getLeaders } from "../../utils/dig";
+import { getDigStatsByFid } from "../../utils/dig";
 import { PinataFDK } from "pinata-fdk";
 
 const fdk = new PinataFDK({
@@ -15,34 +15,34 @@ export default async (req, res) => {
 
     if (!isValid) {
       return res.status(200).send(`
-        <!DOCTYPE html>
-          <html>
-            <head>
-              <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://www.dig.bingo/lbError.png" />
-              <meta property="og:image" content="https://www.dig.bingo/lbError.png" />
-              <meta property="fc:frame:button:1" content="Dig" />
-              <meta property="fc:frame:button:1:action" content="post" />
-              <meta
-                property="fc:frame:button:1:post_url"
-                content="https://www.dig.bingo/api/leaderDig"
-              />
-              <meta property="fc:frame:button:2" content="My Stats" />
-              <meta property="fc:frame:button:2:action" content="post" />
-              <meta
-                property="fc:frame:button:2:post_url"
-                content="https://www.dig.bingo/api/myStats"
-              />
-              <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
-            </head>
-          </html>
-      `);
+          <!DOCTYPE html>
+            <html>
+              <head>
+                <meta property="fc:frame" content="vNext" />
+                <meta property="fc:frame:image" content="https://www.dig.bingo/lbError.png" />
+                <meta property="og:image" content="https://www.dig.bingo/lbError.png" />
+                <meta property="fc:frame:button:1" content="Dig" />
+                <meta property="fc:frame:button:1:action" content="post" />
+                <meta
+                  property="fc:frame:button:1:post_url"
+                  content="https://www.dig.bingo/api/leaderDig"
+                />
+                <meta property="fc:frame:button:2" content="My Stats" />
+                <meta property="fc:frame:button:2:action" content="post" />
+                <meta
+                  property="fc:frame:button:2:post_url"
+                  content="https://www.dig.bingo/api/myStats"
+                />
+                <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
+              </head>
+            </html>
+        `);
     }
 
     try {
       const { fid } = message.data;
 
-      const imgPath = path.join(process.cwd(), "public", "lb.png");
+      const imgPath = path.join(process.cwd(), "public", "lbStats.png");
       const img = await loadImage(imgPath);
 
       const canvas = createCanvas(img.width, img.height);
@@ -50,25 +50,13 @@ export default async (req, res) => {
 
       ctx.drawImage(img, 0, 0);
 
-      ctx.font = "32px Arial";
+      ctx.font = "64px Arial";
 
-      const leaders = await getLeaders();
+      const count = await getDigStatsByFid(fid);
 
-      const headerHeight = 230;
-      const startY = headerHeight + 50;
-
-      leaders.forEach((leader, index) => {
-        const textX = 110;
-        const y = startY + index * (32 + 10);
-
-        ctx.fillStyle = fid.toString() === leader[0] ? "#347d2e" : "#000000";
-        const text = `${index + 1}. ${leader[0]}`;
-        ctx.fillText(text, textX, y);
-
-        ctx.fillStyle = "#347d2e";
-        const cnt = `${leader[1]}`;
-        ctx.fillText(cnt, 380, y);
-      });
+      ctx.fillStyle = "#347d2e";
+      const text = `${count.count} dig(s)`;
+      ctx.fillText(text, 140, 330);
 
       const buffer = canvas.toBuffer("image/png");
 
@@ -81,11 +69,11 @@ export default async (req, res) => {
               <meta property="fc:frame" content="vNext" />
               <meta property="fc:frame:image" content="${imgurResponse}" />
               <meta property="og:image" content="${imgurResponse}" />
-              <meta property="fc:frame:button:1" content="Dig" />
+              <meta property="fc:frame:button:1" content="Leaderboard" />
               <meta property="fc:frame:button:1:action" content="post" />
               <meta
                 property="fc:frame:button:1:post_url"
-                content="https://www.dig.bingo/api/leaderDig"
+                content="https://www.dig.bingo/api/leader"
               />
               <meta property="fc:frame:button:2" content="My Stats" />
               <meta property="fc:frame:button:2:action" content="post" />
