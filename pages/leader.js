@@ -13,11 +13,17 @@ export default function About() {
           content="https://www.dig.bingo/lbMain.png"
         />
         <meta property="og:image" content="https://www.dig.bingo/lbMain.png" />
-        <meta property="fc:frame:button:1" content="Check Leaderboard" />
+        <meta property="fc:frame:button:1" content="Leaderboard" />
         <meta property="fc:frame:button:1:action" content="post" />
         <meta
           property="fc:frame:button:1:post_url"
           content="https://www.dig.bingo/api/leader"
+        />
+        <meta property="fc:frame:button:2" content="Dig" />
+        <meta property="fc:frame:button:2:action" content="post" />
+        <meta
+          property="fc:frame:button:2:post_url"
+          content="https://www.dig.bingo/api/leaderDig"
         />
         <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
       </Head>

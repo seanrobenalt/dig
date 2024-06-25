@@ -720,10 +720,10 @@ export default async function handler(req, res) {
                   property="fc:frame:button:1:post_url"
                   content="https://www.dig.bingo/api/leaderDig"
                 />
-                <meta property="fc:frame:button:4" content="My Stats" />
-                <meta property="fc:frame:button:4:action" content="post" />
+                <meta property="fc:frame:button:2" content="My Stats" />
+                <meta property="fc:frame:button:2:action" content="post" />
                 <meta
-                  property="fc:frame:button:4:post_url"
+                  property="fc:frame:button:2:post_url"
                   content="https://www.dig.bingo/api/myStats"
                 />
                 <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
@@ -762,10 +762,10 @@ export default async function handler(req, res) {
                       property="fc:frame:button:1:target"
                       content="https://warpcast.com/~/compose?text=Check+your+Dig+stats+and+play+the+game+by+%40sean07.eth&embeds[]=https%3A%2F%2Fwww.dig.bingo%2Fleader"
                     />
-                    <meta property="fc:frame:button:4" content="My Stats" />
-                    <meta property="fc:frame:button:4:action" content="post" />
+                    <meta property="fc:frame:button:2" content="My Stats" />
+                    <meta property="fc:frame:button:2:action" content="post" />
                     <meta
-                      property="fc:frame:button:4:post_url"
+                      property="fc:frame:button:2:post_url"
                       content="https://www.dig.bingo/api/myStats"
                     />
                     <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
@@ -791,10 +791,10 @@ export default async function handler(req, res) {
                     property="fc:frame:button:1:target"
                     content="https://warpcast.com/~/compose?text=Check+your+Dig+stats+and+play+the+game+by+%40sean07.eth&embeds[]=https%3A%2F%2Fwww.dig.bingo%2Fleader"
                   />
-                  <meta property="fc:frame:button:4" content="My Stats" />
-                  <meta property="fc:frame:button:4:action" content="post" />
+                  <meta property="fc:frame:button:2" content="My Stats" />
+                  <meta property="fc:frame:button:2:action" content="post" />
                   <meta
-                    property="fc:frame:button:4:post_url"
+                    property="fc:frame:button:2:post_url"
                     content="https://www.dig.bingo/api/myStats"
                   />
                   <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
@@ -815,10 +815,10 @@ export default async function handler(req, res) {
                     property="fc:frame:button:1:post_url"
                     content="https://www.dig.bingo/api/leaderDig"
                   />
-                  <meta property="fc:frame:button:4" content="My Stats" />
-                  <meta property="fc:frame:button:4:action" content="post" />
+                  <meta property="fc:frame:button:2" content="My Stats" />
+                  <meta property="fc:frame:button:2:action" content="post" />
                   <meta
-                    property="fc:frame:button:4:post_url"
+                    property="fc:frame:button:2:post_url"
                     content="https://www.dig.bingo/api/myStats"
                   />
                   <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
@@ -842,10 +842,10 @@ export default async function handler(req, res) {
                 property="fc:frame:button:1:post_url"
                 content="https://www.dig.bingo/api/leaderDig"
               />
-              <meta property="fc:frame:button:4" content="My Stats" />
-              <meta property="fc:frame:button:4:action" content="post" />
+              <meta property="fc:frame:button:2" content="My Stats" />
+              <meta property="fc:frame:button:2:action" content="post" />
               <meta
-                property="fc:frame:button:4:post_url"
+                property="fc:frame:button:2:post_url"
                 content="https://www.dig.bingo/api/myStats"
               />
               <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
