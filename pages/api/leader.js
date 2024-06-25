@@ -25,6 +25,7 @@ export default async (req, res) => {
       const startY = headerHeight + 50;
 
       leaders.forEach((leader, index) => {
+        console.log("leader", leader[0], leader[1]);
         const textX = 110;
         const y = startY + index * (fontSize + 10);
 
