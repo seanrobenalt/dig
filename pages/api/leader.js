@@ -46,29 +46,17 @@ export default async (req, res) => {
               <meta property="fc:frame" content="vNext" />
               <meta property="fc:frame:image" content="${imgurResponse}" />
               <meta property="og:image" content="${imgurResponse}" />
-              <meta property="fc:frame:button:1" content="Share" />
-              <meta property="fc:frame:button:1:action" content="link" />
+              <meta property="fc:frame:button:1" content="Dig" />
+              <meta property="fc:frame:button:1:action" content="post" />
               <meta
-                property="fc:frame:button:1:target"
-                content="https://warpcast.com/~/compose?text=I%27ve+got+the+Dig%2C+play+the+game+by+%40sean07.eth&embeds[]=https%3A%2F%2Fwww.dig.bingo%2Fleaderboard"
-              />
-              <meta property="fc:frame:button:2" content="NFT" />
-              <meta property="fc:frame:button:2:action" content="link" />
-              <meta
-                property="fc:frame:button:2:target"
-                content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
-              />
-              <meta property="fc:frame:button:3" content="Tokens" />
-              <meta property="fc:frame:button:3:action" content="link" />
-              <meta
-                property="fc:frame:button:3:target"
-                content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
+                property="fc:frame:button:1:post_url"
+                content="https://www.dig.bingo/api/leaderDig"
               />
               <meta property="fc:frame:button:4" content="My Stats" />
-              <meta property="fc:frame:button:4:action" content="post_url" />
+              <meta property="fc:frame:button:4:action" content="post" />
               <meta
-                property="fc:frame:button:4:target"
-                content="https://www.dig.bingo/myStats"
+                property="fc:frame:button:4:post_url"
+                content="https://www.dig.bingo/api/myStats"
               />
               <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
             </head>
@@ -76,7 +64,29 @@ export default async (req, res) => {
       `);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: "Failed to generate image" });
+      return res.status(200).send(`
+        <!DOCTYPE html>
+          <html>
+            <head>
+              <meta property="fc:frame" content="vNext" />
+              <meta property="fc:frame:image" content="https://www.dig.bingo/lbError.png" />
+              <meta property="og:image" content="https://www.dig.bingo/lbError.png" />
+              <meta property="fc:frame:button:1" content="Dig" />
+              <meta property="fc:frame:button:1:action" content="post" />
+              <meta
+                property="fc:frame:button:1:post_url"
+                content="https://www.dig.bingo/api/leaderDig"
+              />
+              <meta property="fc:frame:button:4" content="My Stats" />
+              <meta property="fc:frame:button:4:action" content="post" />
+              <meta
+                property="fc:frame:button:4:post_url"
+                content="https://www.dig.bingo/api/myStats"
+              />
+              <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
+            </head>
+          </html>
+      `);
     }
   } else {
     res.setHeader("Allow", ["POST"]);
