@@ -14,8 +14,7 @@ export default async (req, res) => {
 
       ctx.drawImage(img, 0, 0);
 
-      const fontSize = 32;
-      ctx.font = `${fontSize}px Arial`;
+      ctx.font = "32px Arial";
 
       const leaders = await getLeaders();
 
@@ -24,9 +23,9 @@ export default async (req, res) => {
 
       leaders.forEach((leader, index) => {
         const textX = 110;
-        const y = startY + index * (fontSize + 10);
+        const y = startY + index * (32 + 10);
 
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "#000000";
         ctx.fillText(`${index + 1}. ${leader[0]}`, textX, y);
 
         ctx.fillStyle = "#C9362B";
