@@ -10,34 +10,16 @@ export default function About() {
         <meta property="description" content="Own the NFT & Earn ERC 20s" />
         <meta
           property="fc:frame:image"
-          content="https://www.dig.bingo/digNFT.png"
+          content="https://www.dig.bingo/lbMain.png"
         />
-        <meta property="og:image" content="https://www.dig.bingo/digNFT.png" />
-        <meta property="fc:frame:button:1" content="Dig" />
+        <meta property="og:image" content="https://www.dig.bingo/lbMain.png" />
+        <meta property="fc:frame:button:1" content="Check Leaderboard" />
         <meta property="fc:frame:button:1:action" content="post" />
         <meta
           property="fc:frame:button:1:post_url"
-          content="https://www.dig.bingo/api/play"
+          content="https://www.dig.bingo/api/leader"
         />
-        <meta property="fc:frame:button:2" content="NFT" />
-        <meta property="fc:frame:button:2:action" content="link" />
-        <meta
-          property="fc:frame:button:2:target"
-          content="https://explorer.ham.fun/token/0x142407b2D618f7DA94bE2194f426B532f3405949/instance/1"
-        />
-        <meta property="fc:frame:button:3" content="Tokens" />
-        <meta property="fc:frame:button:3:action" content="link" />
-        <meta
-          property="fc:frame:button:3:target"
-          content="https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409"
-        />
-        <meta property="fc:frame:button:4" content="Rules" />
-        <meta property="fc:frame:button:4:action" content="link" />
-        <meta
-          property="fc:frame:button:4:target"
-          content="https://www.dig.bingo/rules"
-        />
-        <meta property="fc:frame:image:aspect_ratio" content="1:1" />
+        <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
       </Head>
       <main
         style={{

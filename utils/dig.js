@@ -42,3 +42,12 @@ export const updateDig = async (id, fid) => {
       throw err;
     });
 };
+
+export const getLeaders = async () => {
+  return fetch(`${process.env.API_HOST}/api/v1/digs/leaders`)
+    .then((response) => response.json())
+    .catch((err) => {
+      console.error(err);
+      throw err;
+    });
+};
