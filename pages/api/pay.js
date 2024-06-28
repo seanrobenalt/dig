@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import { createDigPayout } from "../../utils/digPayout";
+import { getAddressOnLeaderboard } from "../../utils/dig";
 
 const abi = [
   {
@@ -986,7 +987,14 @@ export default async function handler(req, res) {
       wallet
     );
 
-    const amountToSend = 1000000000000000000000n;
+    const onLeaderboard = await getAddressOnLeaderboard(currentHolder);
+
+    let amountToSend;
+    if (onLeaderboard.on_leaderboard) {
+      amountToSend = 2000000000000000000000n;
+    } else {
+      amountToSend = 1000000000000000000000n;
+    }
 
     for (const tokenName in tokens) {
       const tokenAddress = tokens[tokenName];

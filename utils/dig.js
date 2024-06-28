@@ -60,3 +60,14 @@ export const getDigStatsByFid = async (fid) => {
       throw err;
     });
 };
+
+export const getAddressOnLeaderboard = async (address) => {
+  return fetch(
+    `${process.env.API_HOST}/api/v1/digs/address_on_leaderboard/${address}`
+  )
+    .then((response) => response.json())
+    .catch((err) => {
+      console.error(err);
+      throw err;
+    });
+};
