@@ -12,4 +12,4 @@ We play until the ETH for gas in the NFT wallet on Ham chain runs out, or the to
 
 ERC 721 contract deployed to the Ham blockchain [here](https://explorer.ham.fun/address/0x142407b2D618f7DA94bE2194f426B532f3405949). Code is [here](./contracts/dig.sol)
 
-Contract for holding ERC 20s and transferring the winner is deployed on Base [here](https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409).
+Contract for holding ERC 20s and transferring the winner is deployed on Base [here](https://basescan.org/address/0x156c132c93ce88bbab04313ef456f093d6957409). Code is [here](./contracts/tokens.sol).
