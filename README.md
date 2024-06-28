@@ -1,6 +1,6 @@
 ![Dig](./public/digNFT.png)
 
-*Dig* is a Farcaster frame game where you click a button to have an NFT transferred to you. There is also a contract that stores ERC 20 tokens and at a random time every Monday pays the current holder 1k tokens from the available pool. There is a leaderboard of top 5 diggers throughout the week. If you're holding the NFT at the random time and win the payout, you'll receive double the tokens (2k).
+*Dig* is a Farcaster frame game where you click a button to have an NFT transferred to you. There is also a contract that stores ERC 20 tokens and at a random time every Monday pays the current holder 1k tokens from the available pool. There is a [leaderboard](https://warpcast.com/sean07.eth/0x6b30e693) of top 5 diggers throughout the week. If you're holding the NFT at the random time and win the payout, you'll receive double the tokens (2k).
 
 Tokens in the ERC 20 contract must be whitelisted to avoid diggers getting spammy tokens. Current whitelisted tokens are degen, tn100x, mfercoin and higher.
 
